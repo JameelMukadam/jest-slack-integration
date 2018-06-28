@@ -1,0 +1,11 @@
+{
+  "name": "jest-slack-integration",
+  "version": "1.0.0",
+  "description": "This script allows you to post test results to slack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jameel Mukadam <Jameel@JameelMukadam.com> (https://www.JameelMukadam.com)",
+  "license": "ISC"
+}
