@@ -1,11 +1,38 @@
 {
   "name": "jest-slack-integration",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This script allows you to post test results to slack",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --compilers js:babel-register --require babel-polyfill",
+    "prepackage": "rimraf lib",
+    "package": "babel './' --out-dir 'lib' --presets=es2015 --ignore 'node_modules'",
+    "postpackage": "cd lib && yarn"
   },
   "author": "Jameel Mukadam <Jameel@JameelMukadam.com> (https://www.JameelMukadam.com)",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "bugsnag": "^2.4.3",
+    "chai": "^4.0.1",
+    "karma-babel-preprocessor": "^6.0.1",
+    "read-pkg": "^4.0.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "coveralls": "^2.13.1",
+    "jasmine-core": "^2.6.2",
+    "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.1.1",
+    "karma-firefox-launcher": "^1.0.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-mocha": "^1.3.0",
+    "mocha": "^3.4.2",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nyc": "^11.0.1",
+    "rimraf": "^2.6.1"
+  }
 }

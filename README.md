@@ -4,10 +4,12 @@ This script allows you to post test results to slack.
 
 ## Setup
   - Set up a [Slack Incoming Webhook integration](https://my.slack.com/services/new/incoming-hebhook/)
-  - Add the Webhook URL to `package.json` under jestSlackIntegrationWebhookUrl
+  - Add the Webhook URL to `package.json` under `jestSlackIntegration`
+  - (optional) Add your bugsnag API key to `package.sjon` under `jestSlackIntegration`
 ```  
-"jestSlackIntegrationWebhookUrl": {
-  "webhookUrl": "https://hooks.slack.com/services/XXXXXXXXX/XXXXXXXXX/XXXXXXXXXXXXXXXXXX"
+"jestSlackIntegration": {
+  "webhookUrl": "https://hooks.slack.com/services/XXXXXXXXX/XXXXXXXXX/XXXXXXXXXXXXXXXXXX",
+  "bugsnagAPI": "bgfdsy564e3y6b7nuh54dd"
 },
 ```
 Set `jest-slack-integration` as the jest testResultsProcessor
