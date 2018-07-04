@@ -14,7 +14,7 @@ This script allows you to post test results to slack.
   "appName": "My App"
 },
 ```
-Set `jest-slack-integration` as the jest testResultsProcessor
+Set `jest-slack-integration` as the jest testResultsProcessor in your `package.json` or `jest.config.js` file
 ```
 "jest": {
   "testResultsProcessor": "./node_modules/jest-slack-integration"
