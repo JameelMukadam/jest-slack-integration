@@ -23,6 +23,7 @@ module.exports = testResults => {
           fallback: 'Required plain-text summary of the attachment.',
           color: '#36a64f',
           title: 'Your Test Results Are In!',
+          author_name: (packageJson.jestSlackIntegration.appName) ? packageJson.jestSlackIntegration.appName : 'App',
           mrkdwn_in: ['text'],
           text: 'Here is a quick summary of the jest test results..   \nrun `jest` locally to see all the details \n..',
           fields: [
