@@ -1,6 +1,6 @@
 {
   "name": "jest-slack-integration",
-  "version": "1.0.10",
+  "version": "1.0.14",
   "description": "This script allows you to post test results to slack",
   "main": "index.js",
   "scripts": {
