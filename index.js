@@ -14,14 +14,16 @@ module.exports = testResults => {
 
     const failedMessage = `<!here> Bad News! *${testResults.numFailedTestSuites}* test suites have failed and *${testResults.numFailedTests}* tests have failed :( *${testResults.numPassedTests}* tests have passed. Please have a look at your tests.`
     const passedMessage = `<!here> Great News! All *${testResults.numPassedTests}* tests have passed! Code coverage is coming soon..`
-    const text = (testResults.numFailedTestSuites > 0 || testResults.numFailedTests > 0 ) ? failedMessage : passedMessage
+    const failedTests = testResults.numFailedTestSuites > 0 || testResults.numFailedTests > 0
+    const text = failedTests ? failedMessage : passedMessage
+    const borderColor = failedTests ? '#a30200' : '#36a64f'
 
     const slackMessage = {
       text: text,
       attachments: [
         {
           fallback: 'Required plain-text summary of the attachment.',
-          color: '#36a64f',
+          color: borderColor,
           title: 'Your Test Results Are In!',
           author_name: (packageJson.jestSlackIntegration.appName) ? packageJson.jestSlackIntegration.appName : 'App',
           mrkdwn_in: ['text'],
