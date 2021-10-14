@@ -1,3 +1,5 @@
+# THIS PROJECT IS NO LONGER MAINTAINED
+
 # Jest Slack Integration
 
 This script allows you to post test results to slack.
